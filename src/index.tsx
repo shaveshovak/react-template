@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { I18nextProvider } from "react-i18next";
-import 'antd/dist/antd.min.css';
+import 'antd/dist/reset.css';
 
 import Router from "./router";
 import i18n from "./translation";
