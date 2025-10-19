@@ -5,6 +5,9 @@ import Header from "../components/Header";
 import routes from "./config";
 import { Styles } from "../styles/styles";
 
+// Lazy load pages
+const Home = lazy(() => import("../pages/Home"));
+
 const Router = () => {
   return (
     <Suspense fallback={null}>
@@ -12,12 +15,20 @@ const Router = () => {
       <Header />
       <Switch>
         {routes.map((routeItem) => {
+          let Component;
+          switch (routeItem.component) {
+            case "Home":
+              Component = Home;
+              break;
+            default:
+              Component = Home;
+          }
           return (
             <Route
               key={routeItem.component}
               path={routeItem.path}
               exact={routeItem.exact}
-              component={lazy(() => import(`../pages/${routeItem.component}`))}
+              component={Component}
             />
           );
         })}
