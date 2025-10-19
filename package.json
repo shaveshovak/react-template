@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@types/node": "^15.14.9",
+    "@types/node": "^20.0.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.28",
     "antd": "^4.24.14",
